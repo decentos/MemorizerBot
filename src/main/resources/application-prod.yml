@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
+  sql:
+    init:
+      mode: always
+
+bot:
+  name: ${BOT_NAME}
+  token: ${BOT_TOKEN}

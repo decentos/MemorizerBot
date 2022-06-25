@@ -1,0 +1,1 @@
+worker: java -jar target/MemorizerBot-1.0.0.jar me.decentos.MemorizerApp

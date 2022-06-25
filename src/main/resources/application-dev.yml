@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/memorizer_bot?useUnicode=true&serverTimezone=UTC&useSSL=false
+    username: root
+    password: Consensus69
+  sql:
+    init:
+      mode: always
+
+bot:
+  name: MemorizerHelperBot
+  token: 5432551663:AAGQJQa2vAF0I35n45H9Bw7IZhIBWpsKwXY
