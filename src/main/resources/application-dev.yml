@@ -6,7 +6,3 @@ spring:
   sql:
     init:
       mode: always
-
-bot:
-  name: MemorizerHelperBot
-  token: 5432551663:AAGQJQa2vAF0I35n45H9Bw7IZhIBWpsKwXY
