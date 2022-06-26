@@ -25,11 +25,7 @@ class BotController(
             val chatId = message.chatId.toString()
             val messageText = message.text
 
-            val user = try {
-                userService.getUser(chatId)
-            } catch (e: Exception) {
-                userService.saveUser(chatId)
-            }
+            val user = userService.checkUser(message)
             val responseText = messageService.prepareResponse(messageText, user)
             val responseMessage = messageService.sendMessage(chatId, responseText)
             execute(responseMessage)

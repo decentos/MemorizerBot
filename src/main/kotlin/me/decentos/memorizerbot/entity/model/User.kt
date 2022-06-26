@@ -1,6 +1,9 @@
-package me.decentos.memorizerbot.entity
+package me.decentos.memorizerbot.entity.model
 
 import org.hibernate.Hibernate
+import org.hibernate.annotations.CreationTimestamp
+import org.hibernate.annotations.UpdateTimestamp
+import java.time.LocalDateTime
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
@@ -16,8 +19,26 @@ data class User(
     @Column(name = "chat_id", nullable = false)
     var chatId: String,
 
+    @Column(name = "first_name")
+    var firstName: String?,
+
+    @Column(name = "last_name")
+    var lastName: String?,
+
+    @Column(name = "user_name")
+    var userName: String?,
+
     @Column(name = "current_level", nullable = false)
     var currentLevel: Int,
+
+    @CreationTimestamp
+    @Column(name = "created", nullable = false, updatable = false)
+    var created: LocalDateTime = LocalDateTime.now(),
+
+    @UpdateTimestamp
+    @Column(name = "updated", nullable = false)
+    var updated: LocalDateTime = LocalDateTime.now(),
+
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

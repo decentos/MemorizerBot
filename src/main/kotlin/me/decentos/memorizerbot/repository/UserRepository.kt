@@ -1,6 +1,6 @@
 package me.decentos.memorizerbot.repository
 
-import me.decentos.memorizerbot.entity.User
+import me.decentos.memorizerbot.entity.model.User
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
 

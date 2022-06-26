@@ -1,6 +1,6 @@
 package me.decentos.memorizerbot.service
 
-import me.decentos.memorizerbot.entity.User
+import me.decentos.memorizerbot.entity.dto.UserDto
 import org.springframework.stereotype.Service
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup
@@ -9,11 +9,11 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 @Service
 class MessageService {
 
-    fun prepareResponse(messageText: String, user: User): String {
+    fun prepareResponse(messageText: String, userDto: UserDto): String {
         return when {
             messageText == "/start" -> "Welcome"
             messageText.startsWith("Button ") -> "Push $messageText"
-            else -> "Text: *$messageText* from ${user.chatId}"
+            else -> "Text: *$messageText* from ${userDto.chatId}"
         }
     }
 
